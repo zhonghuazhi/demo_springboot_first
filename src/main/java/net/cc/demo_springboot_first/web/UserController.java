@@ -1,6 +1,7 @@
 package net.cc.demo_springboot_first.web;
 
 import net.cc.demo_springboot_first.domain.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,8 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
+    @Autowired
+    private User user;
+
     @RequestMapping("/hello")
     public User hello() {
-        return new User();
+        System.out.println(user.toString());
+        return user;
     }
 }

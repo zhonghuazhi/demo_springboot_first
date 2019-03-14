@@ -13,11 +13,20 @@ import org.springframework.stereotype.Component;
 @Component
 public class User {
 
-    @Value("${user.age}")
+    @Value("${users.age}")
     private int age;
 
-    @Value("${user.name}")
+    @Value("${users.name}")
     private String name;
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "age=" + age +
+                ", name='" + name + '\'' +
+                '}';
+    }
 
     public int getAge() {
         return age;
