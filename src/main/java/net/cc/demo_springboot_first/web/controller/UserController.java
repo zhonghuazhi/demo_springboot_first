@@ -19,7 +19,7 @@ public class UserController {
     @Autowired
     private User user;
 
-    @RequestMapping("/hello")
+    @RequestMapping("/user")
     public User hello() {
         System.out.println(user.toString());
         //return user;
